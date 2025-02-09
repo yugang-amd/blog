@@ -5,8 +5,6 @@ tags: ["git", "version-control", "productivity"]
 draft: false
 ---
 
-## New Git Tricks I Learned Recently
-
 I recently watched Scott Chacon's talk called [So You Think You Know Git](https://www.youtube.com/watch?v=ZDR433b0HJY). The talk was so good — it includes new and old git commands I've never seen. After watching it, I decided to create this article to summarize all the great tips and tricks with every single git command he mentions in his talk.
 
 1. Create an alias to always stash all files (including ignored and untracked files). In this example, you would run "git staash", but you can choose any alias.
