@@ -7,181 +7,123 @@ draft: false
 
 ## New Git Tricks I Learned Recently
 
-Recently, I came across a few Git tricks that I believe will help developers improve their workflows. Here's the full list of **18 Git tricks** I recently shared on LinkedIn, complete with styling and content closely matching the original article.
+I recently watched Scott Chacon's talk called [So You Think You Know Git](https://www.youtube.com/watch?v=ZDR433b0HJY). The talk was so good — it includes new and old git commands I've never seen. After watching it, I decided to create this article to summarize all the great tips and tricks with every single git command he mentions in his talk.
 
-### Organizing Commits
+1. Create an alias to always stash all files (including ignored and untracked files). In this example, you would run "git staash", but you can choose any alias.
 
-#### 1. **Effortless Commit Organization with Autosquash**
+    ```bash
+    git config --global alias.staash 'stash --all'
+    ```
 
-Sometimes your commit history can get messy. `--autosquash` makes it easier to tidy up commits during an interactive rebase. For example:
+2. Run a bash script defined as an alias from the git command. In this example, you would run "git bb". Link to the super useful better-branch script here: [better-branch script](https://gist.github.com/schacon/e9e743dee2e92db9a464619b99e94eff)
 
-```bash
-git rebase -i --autosquash main
-```
+    ```bash
+    git config --global alias.bb !better-branch.sh
+    ```
 
-Combine this with `git commit --fixup=<commit_hash>` to clean up commits efficiently.
+3. If you want to switch configs based on your project's features, you can add conditional configs to any `.gitconfig` file.
 
-### 2. **Interactive Staging with `git add -p`**
+    ```gitconfig
+    [includeIf "gitdir:~/projects/work/"]
+        path = ~/projects/work/.gitconfig
 
-This trick lets you stage specific changes in your files. Perfect for crafting focused commits:
+    [includeIf "gitdir:~/projects/oss/"]
+        path = ~/projects/oss/.gitconfig
+    ```
 
-```bash
-git add -p
-```
+4. Use `git blame`, but make it run on specific lines in a file. Much more readable and understandable.
 
-### Multitasking with Git
+    ```bash
+    git blame -L 15,26 path/to/file
+    ```
 
-#### 3. **Use Worktrees to Avoid Stashing**
+5. You can also use `git log -L` to find functions inside files that have changed recently. Much cleaner as well.
 
-Tired of switching branches and stashing? Worktrees allow simultaneous branch work:
+    ```bash
+    git log -L :functionName:path/to/file
+    ```
 
-```bash
-git worktree add ../feature-branch feature-branch
-```
+6. Another `git blame` command improvement: ignore whitespace, detect lines that moved or copied in the same commit, or find the commit that created the file.
 
-### 4. **Debug Faster with Git Bisect**
+    ```bash
+    git blame -w -C -C -C
+    ```
 
-`git bisect` helps pinpoint the commit causing bugs. Automate testing during the process:
+7. One `git blame` command to rule them all. Putting everything together. Scott Chacon recommends creating an alias for this super useful command:
 
-```bash
-git bisect start
-```
+    ```bash
+    git blame -w -C -C -C -L 15,26 path/to/file
+    ```
 
-### Recovery Tricks
+8. Use `git log` with a special flag when you want to find a string that changed, but `git grep` won’t be able to find it since it is part of the history of the repo. In this example, the regular expression to search is "files_watcher":
 
-#### 5. **Recover Lost Commits with Git Reflog**
+    ```bash
+    git log -S files_watcher
+    ```
 
-Accidentally delete a branch? You can retrieve it with:
+9. Use `git reflog` as a log of your references, so you can search through all the changes locally in your repo.
 
-```bash
-git reflog
-```
+    ```bash
+    git reflog
+    ```
 
-### 6. **Cherry-Pick Specific Commits**
+10. Using `git diff` with the `--word-diff` flag allows you to find differences in file changes based on words and not the whole line of code. This makes it way easier to read & understand the changes.
 
-Need to grab just one commit from another branch?
+    ```bash
+    git diff --word-diff
+    ```
 
-```bash
-git cherry-pick <commit_hash>
-```
+11. Probably one of the most useful unknown configs: reuse recorded resolution (`rerere`). It stores conflict resolutions and automatically applies them when they show up again. This seems to be a no-brainer productivity boost.
 
-### 7. **Use Commit Templates**
+    ```bash
+    git config --global rerere.enabled true
+    ```
 
-Set up standardized commit messages:
+### New Stuff
 
-```bash
-git config commit.template ~/.gitmessage
-```
+12. Leverage the `git branch --column` command by sorting the branches based on the last modified date and display them in columns.
 
-### 8. **Amend Without Changing Timestamps**
+    ```bash
+    git config --global column.ui auto
+    git config --global branch.sort -committerdate
+    ```
 
-Need to update the last commit? Keep the timestamp intact:
+13. Use a better `git push --force` without worrying you will overwrite someone else’s work. It's called `--force-with-lease`!
 
-```bash
-git commit --amend --no-edit
-```
+    ```bash
+    git push --force-with-lease
+    ```
 
-### 9. **Stash Only Selected Files**
+14. Sign commits with SSH instead of GPG. Also reuse your same SSH key when pushing commits!
 
-No need to stash everything. Focus only on specific files:
+    ```bash
+    git config gpg.format ssh
+    git config user.signingkey ~/.ssh/key.pub
+    ```
 
-```bash
-git stash push <file>
-```
+15. Git maintenance can schedule background tasks (like cleanup) via a cron job, significantly speeding up Git for large repos! Say hello to smoother experiences with monorepos.
 
-### Inspecting Changes
+    ```bash
+    git maintenance start
+    ```
 
-#### 10. **Quickly View Changes Since Last Commit**
+### Big Repo Stuff
 
-Use this command to see what’s been modified:
+16. When you enable the filesystem monitor, this starts a daemon that tracks file changes. Now, `git status` will only show the updates on modified files.
 
-```bash
-git diff HEAD
-```
+    ```bash
+    git config core.fsmonitor true
+    ```
 
-### 11. **Undo Changes Locally**
+17. Use `git clone` filter to filter out blobs when cloning large repos.
 
-Revert changes in a file before committing:
+    ```bash
+    git clone --filter=blob:none
+    ```
 
-```bash
-git checkout -- <file>
-```
+18. …or use `git clone` filter to filter out trees.
 
-### 12. **Rename Branches Locally and Remotely**
-
-Here’s how to rename branches cleanly:
-
-```bash
-git branch -m old-name new-name
-git push origin :old-name new-name
-```
-
-### Handling Large Repositories
-
-#### 13. **Sparse Checkout for Large Repos**
-
-Work on a subset of files from a large repo:
-
-```bash
-git sparse-checkout set <folder>
-```
-
-### 14. **Resolve Merge Conflicts with Visual Tools**
-
-You can use a tool like VSCode for easier merge conflict resolution:
-
-```bash
-git mergetool
-```
-
-#### 15. **Clean Up Untracked Files**
-
-Remove those untracked files cluttering your working directory:
-
-```bash
-git clean -f
-```
-
-### Tagging and History
-
-#### Big Repo Stuff
-
-When working with large repositories, these tips can make your workflow more efficient:
-
-#### 16. **Versioning with Tags**
-
-Add tags to important points in your project:
-
-```bash
-git tag v1.0.0
-```
-
-Push the tag:
-
-```bash
-git push origin v1.0.0
-```
-
-### 17. **Visualize Your Commit Graph**
-
-Quickly get a visual overview of your repository’s commit history:
-
-```bash
-git log --graph --oneline
-```
-
-#### 18. **Blame for Tracking Changes**
-
-Want to know who changed a specific line in a file?
-
-```bash
-git blame <file>
-```
-
----
-
-### Conclusion
-
-These tricks have made Git an even more powerful tool for me and my team. Whether you’re collaborating or managing personal projects, applying these techniques will save time and improve your workflow. If you have other tricks to share, feel free to comment below or connect with me.
-
+    ```bash
+    git clone --filter=tree:0
+    ```
 ---
