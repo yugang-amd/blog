@@ -1,0 +1,10 @@
+services:
+  hugo:
+    build: .
+    container_name: hugo-papermod
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/site
+    entrypoint: [""]
+    command: hugo server --bind=0.0.0.0 --baseURL=http://localhost:1313 --watch --disableFastRender

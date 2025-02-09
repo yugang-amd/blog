@@ -1,0 +1,6 @@
+baseURL = "https://alanmond.com/"
+languageCode = "en-us"
+title = "Alan Mond's Blog"
+theme = "PaperMod"
+
+# PaperMod-specific configurations can go here, too.
