@@ -40,4 +40,8 @@ The diagram below provides the end-to-end flow on how the deployment works under
 2. Create a Digital Ocean account
 3. Once on Digital Ocean and click on the big <span style="color:rgb(21,107,53)">GREEN</span> button that says Create.
 4. <img src="../img/create_app.jpg" alt="create_app" width="200"/>
-5. Once you are on the Create New App page, choose Github as the deployment source and select the repository you'd like to listen to when pushing changes. In my case it was `alan707/blog` <img src="../img/select_repository.png" alt="Select repository" width="300"/>
+5. Once you are on the Create New App page, choose Github as the deployment source and select the repository you'd like to listen to when pushing changes. In my case it was `alan707/blog` and the branch was `main`, but you can set that to anything. <img src="../img/select_repository.png" alt="Select repository" width="300"/>
+6. Click on "Next"
+7. This will take you to the next page where you can review details and finally hit the *Create app* button to create your app. Make sure you delete any additional services so your monthly cost is set to **$0.00/month**!
+<img src="../img/review_details.png" alt="create_app" width="400"/>
+8. Once your app is created, you can simply deploy to the branch specified in step 5 and you will see your build go through.
