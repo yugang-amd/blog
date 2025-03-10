@@ -1,5 +1,5 @@
 ---
-title: "How To Deploy A Free Static Website on DigitalOcean"
+title: "How To Host A Free Static Website on DigitalOcean"
 date: 2025-03-01
 tags: ["hosting", "digital ocean", "hugo"]
 draft: false
@@ -36,7 +36,7 @@ The diagram below illustrates the deployment workflow:
 ### Step by Step Implementation
 1. Create a Github repo. You are welcome to fork [https://github.com/alan707/blog](https://github.com/alan707/blog) to get started.
 2. Create a DigitalOcean account.
-3. To make life easier, create a file call `app.yaml` under a new folder called `.do` at the root of your repo.  It should look like this:
+3. To make life easier, create a file called `app.yaml` under a new folder called `.do` at the root of your repo.  It should look like this:
 ```sh
 .do
 └── app.yaml
