@@ -1,5 +1,5 @@
 ---
-title: "Why 80% of Developers Still Haven't Migrated to Bazel 7 (And How Better Docs Could Change That)"
+title: "Bazel Docs: Why It Might Be Time For A Refresh"
 date: 2025-07-04
 tags: ["bazel", "documentation", "build-systems", "technical-documentation", "bazel-docs", "improvement-proposal"]
 draft: false
@@ -7,7 +7,7 @@ draft: false
 > It's pronounced "bay-zuhl" (like "hazel" with a "B").<br>
 > /ˈbeɪ.zəl/
 
-This post collects specific, actionable ideas for improving [Bazel's main documentation website](https://bazel.build/docs), with the goal of boosting adoption and enhancing the developer experience. Like any open source project, Bazel is the result of real human effort—this is offered in the spirit of a naive proposal to help make the project even better.
+This post presents specific, actionable ideas for improving [Bazel's main documentation website](https://bazel.build/docs), with the goal of boosting adoption and enhancing the developer experience. Like any open source project, Bazel is the result of real human effort—this is offered in the spirit of a naive proposal to help make the project even better.
 
 There are many parts of the Bazel documentation that are quite good and we should salvage those. This post targets the poor sections of the documentation that eclipse the good parts. 
 
@@ -15,7 +15,7 @@ There are many parts of the Bazel documentation that are quite good and we shoul
 
 One day, after spending hours scouring the official Bazel documentation and countless Github issues for `rules_python`, `rules_distroless` and `bazel-build/bazel`, I stumbled upon the reddit post that made me chuckle out loud: [bazel is ruining my life](https://www.reddit.com/r/devops/comments/1c2g3s4/bazel_is_ruining_my_life/).  
 
-Apparently this is a fairly well known rant post; but what caught my eye is that most of the comments gravitate toward an shockingly poor documentation experience. 
+Apparently this is a fairly well known rant-post; but what caught my eye is that most of the comments gravitate toward a shockingly poor documentation experience. I'm worried how many other folks rage-quit Bazel
 
 Here are some zingers:
 
@@ -26,7 +26,7 @@ Bazel is now in my pile of "do not touch, may drive you insane". It's sad becaus
 > I invested several weeks in learning Bazel and the documentation was just utterly horrendous to work with.
 > — [u/ReginaldIII](https://www.reddit.com/r/devops/comments/1c2g3s4/bazel_is_ruining_my_life/hm3qxyz)
 
-I won't go through all of the comments but the majority share in the frustration of how difficulty it is to understand how Bazel works and how to read the documentation.
+I won't go through all of the comments but the majority share in the frustration of how difficult it is to understand how Bazel works and how to apply the information in the documentation.
 
 #### What about migration to Bazel 7 release adoption?
 
