@@ -89,7 +89,7 @@ Even though Bazel 8 is already out, the majority of projects are still using WOR
 
 | ![Screenshot showing target explainer](targets_wot.png) | ![Screenshot of visibility and dependencies](visbility_and_depencies_text.png) |
 |:-----------------------------:|:-----------------------------:|
-| ![Screenshot showing .bzl file explainer](bzl_file_explainer_wot.png) | ![Screenshot of a section of Test Encyclopedia](test_encyclopedia.png) |
+| ![Screenshot showing .bzl file explainer](bzl_file_explainer_wot.png) | ![Screenshot of a section of Test Encyclopedia](test_encyclopedia2.png) |
 
 *From left to right, top to bottom: Target concepts explained without BUILD file examples; Visibility and dependencies described abstractly without code samples; .bzl file functionality outlined without actual Starlark code; Test Encyclopedia entries that define terms but don't show working test configurations.*
 
