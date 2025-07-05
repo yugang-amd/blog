@@ -4,8 +4,6 @@ date: 2025-07-04
 tags: ["bazel", "documentation", "build-systems", "technical-documentation", "bazel-docs", "improvement-proposal"]
 draft: false
 ---
-# Why 80% of Developers Still Haven't Migrated to Bazel 7 (And How Better Docs Could Change That)
-
 > It's pronounced "bay-zuhl" (like "hazel" with a "B").<br>
 > /ˈbeɪ.zəl/
 
