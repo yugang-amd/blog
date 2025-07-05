@@ -87,11 +87,14 @@ Even though Bazel 8 is already out, the majority of projects are still using WOR
 
 4. **"Show, Don't Tell" Problem**. When trying to implement a new concept or fix an error in your Bazel build, there are many places in the documentation where a wall of text is provided with no relevant examples to help developers pattern match.  Here are some examples:
 
-| ![Screenshot showing target explainer](targets_wot.png) | ![Screenshot of visibility and dependencies](visbility_and_depencies_text.png) |
-|:-----------------------------:|:-----------------------------:|
-| ![Screenshot showing .bzl file explainer](bzl_file_explainer_wot.png) | ![Screenshot of a section of Test Encyclopedia](test_encyclopedia2.png) |
+<img src="visbility_and_depencies_text.png" alt="Screenshot of visibility and dependencies" style="width: 80%; display: block; margin: 0 auto;">
+<p style="text-align: center;"><em>Visibility and dependencies described abstractly without code samples</em></p>
 
-*From left to right, top to bottom: Target concepts explained without BUILD file examples; Visibility and dependencies described abstractly without code samples; .bzl file functionality outlined without actual Starlark code; Test Encyclopedia entries that define terms but don't show working test configurations.*
+<img src="bzl_file_explainer_wot.png" alt="Screenshot showing .bzl file explainer" style="width: 80%; display: block; margin: 0 auto;">
+<p style="text-align: center;"><em>.bzl file functionality outlined without actual Starlark code</em></p>
+
+<img src="test_encyclopedia2.png" alt="Screenshot of a section of Test Encyclopedia" style="width: 80%; display: block; margin: 0 auto;">
+<p style="text-align: center;"><em>Test Encyclopedia entries that define terms but don't show working test configurations in a BUILD file.</em></p>
 
 ### 🛠️ The Fix: Concrete Steps to Transform Bazel Documentation
 
