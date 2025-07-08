@@ -137,7 +137,7 @@ This isn't just another rant post—it's a roadmap. The Bazel community is full 
 - Contribute examples to the official docs when you solve problems 
 - Join the conversation at BazelCon 2025 (if this proposal gets accepted!)
 
-The 80% migration gap isn't just a number—it represents thousands of developers who want to use Bazel but are held back by unclear documentation. Better docs aren't just nice-to-have; they're essential for Bazel's future growth.
+Thousands of developers who are invested in Bazel are held back by unclear documentation, as shown by the 80% of projects still using WORKSPACE rather than MODULE.bazel. Better documentation isn't just nice-to-have; it's essential for Bazel's future growth.
 
 Should we just do it?
 
