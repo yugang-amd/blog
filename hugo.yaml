@@ -7,11 +7,11 @@ markup:
     renderer:
       unsafe: true
 
-# PaperMod-specific configurations can go here, too.
-
 params:
-  environment: "production"
+  env: "production"
   defaultTheme: light
-  services:
-    googleAnalytics:
-      id: G-FY9MD9PGZC
+
+# Google Analytics configuration
+services:
+  googleAnalytics:
+    id: G-FY9MD9PGZC
