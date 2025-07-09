@@ -1,0 +1,17 @@
+baseURL: "https://alanmond.com/"
+languageCode: "en-us"
+title: "Alan Mond's Blog"
+theme: "PaperMod"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# PaperMod-specific configurations can go here, too.
+
+params:
+  environment: "production"
+  defaultTheme: light
+  services:
+    googleAnalytics:
+      id: G-FY9MD9PGZC
