@@ -145,6 +145,8 @@ Should we just do it?
 
 **Thanks** to Julien Vanier for reading drafts of this.
 
+<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width:104px;height:142px;">
+
 <script async
   src="https://c2NdnHrih0B7HD9srWUv3dvDLMtD6bz7.ondigitalocean.app/static/chatbot/widget.js"
   data-agent-id="c2NdnHrih0B7HD9srWUv3dvDLMtD6bz7"
@@ -154,5 +156,5 @@ Should we just do it?
   data-secondary-color="#E5E8ED"
   data-button-background-color="#0061EB"
   data-starting-message="Hello! I am an AI agent. How can I help you today?"
-  data-logo="https://alanmond.com/posts/bazel-documentation-improvements/MODULE_bazel_adoption.png">
+  data-logo="https://www.w3schools.com/images/w3schools_green.jpg">
 </script>
