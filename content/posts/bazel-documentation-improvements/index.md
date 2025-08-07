@@ -144,3 +144,15 @@ Should we just do it?
 ---
 
 **Thanks** to Julien Vanier for reading drafts of this.
+
+<script async
+  src="https://c2NdnHrih0B7HD9srWUv3dvDLMtD6bz7.ondigitalocean.app/static/chatbot/widget.js"
+  data-agent-id="c2NdnHrih0B7HD9srWUv3dvDLMtD6bz7"
+  data-chatbot-id="c2NdnHrih0B7HD9srWUv3dvDLMtD6bz7"
+  data-name="My Chatbot"
+  data-primary-color="#031B4E"
+  data-secondary-color="#E5E8ED"
+  data-button-background-color="#0061EB"
+  data-starting-message="Hello! I am an AI agent. How can I help you today?"
+  data-logo="https://alanmond.com/posts/bazel-documentation-improvements/MODULE_bazel_adoption.png">
+</script>
